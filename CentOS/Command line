@@ -1,0 +1,8 @@
+Command line
+
+
+$ vim a.js   // 创建编辑a.js
+  press esc => :q 结束编辑并退出
+            => :wq 保存后退出
+
+$ vi a.js   // 编辑a.js

@@ -1,0 +1,16 @@
+Install Node.js and NPM on CentOS
+
+
+Step 1: Add node.js yum repository
+
+$ yum install -y gcc-c++ make
+$ curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+
+Step 2: Install node.js and NPM
+
+$ yum install nodejs
+
+Step 3: Verify versions
+
+$ node -v 
+$ npm -v
