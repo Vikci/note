@@ -1,0 +1,15 @@
+connect mongo
+
+issue: mongodb only connect to 127.0.0.1
+
+$ sudo vim /usr/local/etc/mongod.conf
+
+  open /usr/local/etc/mongod.conf
+
+    net:
+      bindIp: 127.0.0.1
+  change to: 
+    net:
+      bindIp: 127.0.0.1,192.168.0.106,0.0.0.0
+
+$ brew services restart mongodb

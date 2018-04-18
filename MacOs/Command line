@@ -1,0 +1,11 @@
+Command line
+
+// Upgrade NodeJS to the latest version on Mac os
+
+// install node with brew
+$ brew update && brew upgrade node && npm install -g npm
+
+// install node with npm
+$ sudo npm install n -g
+$ sudo n stable  // For the latest stable version:
+$ sudo n latest  // For the latest version:

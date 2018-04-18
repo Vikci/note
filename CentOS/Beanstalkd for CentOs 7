@@ -1,0 +1,39 @@
+Beanstalkd for CentOs 7
+
+Step 0. Install git
+
+$ yum install git
+
+Step 1. Clone repository
+
+$ git clone git://github.com/kr/beanstalkd.git
+$ cd beanstalkd
+$ make
+$ cp beanstalkd /usr/bin/beanstalkd
+$ mkdir /var/lib/beanstalkd
+Step 2. Make startup script
+
+Create file /etc/systemd/system/beanstalkd.service with this content:
+
+$ vi /etc/systemd/system/beanstalkd.service
+    [Unit]
+    Description=Beanstalkd is a simple, fast work queue
+
+    [Service]
+    User=root
+    ExecStart=/usr/bin/beanstalkd -b /var/lib/beanstalkd
+
+    [Install]
+    WantedBy=multi-user.target
+
+Step 3. Finally, run
+
+$ systemctl enable beanstalkd
+$ systemctl start beanstalkd
+
+Step 4. Check
+
+$ ps ax | grep beanstalkd
+
+
+// ref: https://stackoverflow.com/questions/26786368/beanstalkd-for-centos-7

@@ -1,0 +1,13 @@
+Set up an HTTP proxy for Docker
+
+$ mkdir /etc/systemd/system/docker.service.d
+
+$ cat <<EOF > /etc/systemd/system/docker.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://PROXY_SERVER_IP:3128/" "HTTPS_PROXY=http://PROXY_SERVER_IP:3128/" "NO_PROXY=169.254.169.254,/var/run/docker.sock"
+EOF
+
+$ systemctl daemon-reload
+$ systemctl restart docker
+
+// ref: https://forums.docker.com/t/docker-installing-docker-behind-a-proxy-on-centos-7-error-while-pulling-image/26015
