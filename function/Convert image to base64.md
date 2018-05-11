@@ -1,7 +1,7 @@
 # note
 
-Convert image to base64 ()
-
+1. Convert image to base64 ()
+```
 function toDataURL(src, callback) {
   var img = new Image();
   img.crossOrigin = 'Anonymous';
@@ -24,8 +24,10 @@ toDataURL(
     console.log('RESULT:', dataUrl)
   }
 )
+```
 
-Load the local image as blob via XMLHttpRequest and use the FileReader API to convert it to a dataURL:
+2. Load the local image as blob via XMLHttpRequest and use the FileReader API to convert it to a dataURL:
+```
 function encodeImageFileAsURL() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "public/assets/img/sf1.png", true); 
@@ -44,3 +46,4 @@ function encodeImageFileAsURL() {
 }
 
 // ref: https://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript
+```
