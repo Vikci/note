@@ -1,3 +1,17 @@
+Generating a new SSH key
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Adding your SSH key to the ssh-agent
+$ eval "$(ssh-agent -s)"
+$ ssh-add -K ~/.ssh/id_rsa
+ ```
+ unknown option -- K
+ ```
+$ vim /root/.ssh/id_rsa.pub
+```
+ copy to github
+```
+
 -----BEGIN RSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
 DEK-Info: AES-128-CBC,A6F0A137CA6256165E268CAF26930D6C
