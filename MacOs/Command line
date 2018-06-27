@@ -9,3 +9,6 @@ $ brew update && brew upgrade node && npm install -g npm
 $ sudo npm install n -g
 $ sudo n stable  // For the latest stable version:
 $ sudo n latest  // For the latest version:
+
+// install ip
+$ brew install iproute2mac
